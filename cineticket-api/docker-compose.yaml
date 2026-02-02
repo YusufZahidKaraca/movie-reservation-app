@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: cineticket-db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=cineticket # Veritabanımızın adı
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      # 👇 İŞTE O SİHİRLİ SATIR:
+      # migrations klasörünü konteynerin içine "initdb" klasörüne kopyalıyoruz.
+      # Postgres ilk açılışta buradaki .sql dosyalarını sırayla çalıştırır!
+      - ./migrations:/docker-entrypoint-initdb.d
+    restart: always
+
+volumes:
+  postgres_data:
