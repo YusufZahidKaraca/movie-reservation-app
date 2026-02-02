@@ -4,9 +4,6 @@
 
 Built with **Go (Golang)** on the backend and **React (TypeScript)** on the frontend, utilizing a Clean Architecture approach.
 
-![CineTicket Banner](https://via.placeholder.com/1000x400?text=CineTicket+Project+Preview)
-*(Replace this link with your actual screenshot)*
-
 ## 🚀 Features
 
 - **🔐 User Authentication:** Secure Login and Register system using **JWT**.
